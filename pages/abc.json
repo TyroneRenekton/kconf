@@ -1,0 +1,5 @@
+{
+  "name": "kconf-pages",
+  "type": "iceworks",
+  "builder": "@ali/builder-iceworks"
+}

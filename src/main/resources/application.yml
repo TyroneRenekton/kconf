@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/kconf?characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC&autoReconnect=true
+    username: root
+    password: 12348765
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    database: MYSQL
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: com.zzkun.config.MySQL5DialectUTF8
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+
+server:
+  tomcat:
+    uri-encoding: UTF-8
