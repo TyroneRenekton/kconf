@@ -12,6 +12,7 @@
     "@icedesign/layout": "^0.1.0",
     "@icedesign/menu": "^0.1.0",
     "@icedesign/skin": "^0.1.0",
+    "axios": "^0.18.0",
     "bizcharts": "^3.2.2",
     "classnames": "^2.2.5",
     "enquire-js": "^0.1.2",
@@ -50,8 +51,8 @@
     "primaryColor": "#0079f2"
   },
   "scaffoldConfig": {
-    "name": "ice-contract-management-admin",
-    "title": "ICE Contract Management Admin",
+    "name": "Coderkun动态配置中心",
+    "title": "Coderkun动态配置中心",
     "categories": [
       "行业领域"
     ],

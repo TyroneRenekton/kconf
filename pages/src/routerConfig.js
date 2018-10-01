@@ -6,11 +6,13 @@ import BasicLayout from './layouts/BasicLayout';
 import ContractCenter from './pages/ContractCenter';
 import MyContract from './pages/MyContract';
 import ContractSearch from './pages/ContractSearch';
+import Welcome from './pages/Welcome';
+import KTable from './pages/KTable';
 import NotFound from './pages/NotFound';
 
 const routerConfig = [
   {
-    path: '/',
+    path: '/contract/center',
     layout: BasicLayout,
     component: ContractCenter,
   },
@@ -23,6 +25,16 @@ const routerConfig = [
     path: '/contract/search',
     layout: BasicLayout,
     component: ContractSearch,
+  },
+  {
+    path: '/',
+    layout: BasicLayout,
+    component: Welcome,
+  },
+  {
+    path: '/KTable',
+    layout: BasicLayout,
+    component: KTable,
   },
   {
     path: '*',

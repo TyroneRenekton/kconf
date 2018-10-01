@@ -1,6 +1,8 @@
 package com.zzkun.repo;
 
 import com.zzkun.domain.ConfigDO;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -25,4 +27,7 @@ public interface ConfigRepo extends JpaRepository<ConfigDO, Long> {
     void delete(ConfigDO configDO);
 
     ConfigDO findConfigDOByConfName(String confName);
+
+    @Override
+    Page<ConfigDO> findAll(Pageable pageable);
 }

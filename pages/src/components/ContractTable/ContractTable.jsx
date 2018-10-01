@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import CustomTable from '../CustomTable';
 
 const getData = () => {
+
+
   return Array.from({ length: 20 }).map((item, index) => {
     return {
       id: `00000${index}`,
