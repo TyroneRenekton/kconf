@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  kconfdb:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 12348765
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+
+  spring-vote-server:
+    image: kun368/kconf:master
+    restart: always
+    ports:
+      - "8090:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+    depends_on:
+      - kconfdb
+    links:
+      - kconfdb
