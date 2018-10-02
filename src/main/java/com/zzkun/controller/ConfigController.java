@@ -84,8 +84,8 @@ public class ConfigController {
         try {
             String key = MapUtils.getString(dataMap, "key");
             String value = MapUtils.getString(dataMap, "value");
-            String comment = MapUtils.getString(dataMap, "comment");
-            String password = MapUtils.getString(dataMap, "password");
+            String comment = MapUtils.getString(dataMap, "comment", "");
+            String password = MapUtils.getString(dataMap, "password", "");
             if (StringUtils.isBlank(key) || StringUtils.isBlank(value)) {
                 return ResultData.buildErrorResult("key/value为空");
             }

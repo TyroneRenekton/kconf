@@ -5,19 +5,19 @@
 const headerMenuConfig = [
   {
     name: '首页',
-    path: '/',
+    to: '#/',
     icon: 'home',
   },
   {
     name: '反馈',
-    path: 'https://github.com/alibaba/ice',
+    to: 'https://github.com/kun368/kconf/issues',
     external: true,
     newWindow: true,
     icon: 'message',
   },
   {
     name: '帮助',
-    path: 'https://www.zzkun.com',
+    to: 'https://www.zzkun.com',
     external: true,
     newWindow: true,
     icon: 'bangzhu',
@@ -26,7 +26,7 @@ const headerMenuConfig = [
 
 const asideMenuConfig = [
   {
-    name: 'Welcome',
+    name: '首页',
     path: '/',
     icon: 'home',
   },
@@ -36,9 +36,9 @@ const asideMenuConfig = [
     icon: 'cascades',
   },
   {
-    name: 'AddConfig',
+    name: '添加配置',
     path: '/AddConfig',
-    icon: 'home',
+    icon: 'creative',
   },
 ];
 

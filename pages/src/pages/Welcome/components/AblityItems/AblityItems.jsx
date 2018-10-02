@@ -18,7 +18,7 @@ export default class AblityItems extends Component {
           />
           <h3 style={style.hyAbilityItemTitleStyle}>能力输出</h3>
           <p style={style.hyAbilityItemSubtitleStyle}>
-            支付、实名、信用、理财、大数据
+            赋能支付、实名、信用、理财、大数据开发
           </p>
         </div>
 
@@ -28,9 +28,9 @@ export default class AblityItems extends Component {
             src={require('./images/neNAdNbBxUbWpbUQIsJA.svg')}
             style={style.hyAbilityItemImgStyle}
           />
-          <h3 style={style.hyAbilityItemTitleStyle}>政策扶持</h3>
+          <h3 style={style.hyAbilityItemTitleStyle}>技术强劲</h3>
           <p style={style.hyAbilityItemSubtitleStyle}>
-            物料、返佣、品牌支持、运营收益
+            React + SpringBoot 赋能，系统稳如磐石
           </p>
         </div>
 
@@ -40,9 +40,9 @@ export default class AblityItems extends Component {
             src={require('./images/SsStefBxcUWayMyktAwz.svg')}
             style={style.hyAbilityItemImgStyle}
           />
-          <h3 style={style.hyAbilityItemTitleStyle}>资源整合</h3>
+          <h3 style={style.hyAbilityItemTitleStyle}>开放开源</h3>
           <p style={style.hyAbilityItemSubtitleStyle}>
-            门禁停车、智能家居、生活服务
+            人人可用，人认可修改，人人可部署
           </p>
         </div>
       </div>

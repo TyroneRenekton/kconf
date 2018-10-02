@@ -42,7 +42,7 @@ export default class UpdateConfig extends Component {
             ds: response.data.data,
           });
         } else {
-          Toast.error('获取数据失败');
+          Toast.error('失败: ' + response.data.message);
         }
       });
   }

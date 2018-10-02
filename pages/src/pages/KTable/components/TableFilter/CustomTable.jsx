@@ -31,7 +31,7 @@ export default class Home extends Component {
           });
           return response.data.data;
         } else {
-          Toast.error("获取数据失败");
+          Toast.error("失败: " + response.data.message);
         }
       });
   };
@@ -57,9 +57,14 @@ export default class Home extends Component {
   };
 
   renderOper = (a, b, c) => {
+    const confName = c.confName;
+    const editLink = '#/UpdateConfig/' + confName;
+    const getLink = '/api/queryJson?key=' + confName;
+
     return (
       <div style={styles.oper}>
-        <Icon type="edit" size="small" style={styles.editIcon}/>
+        <a href={editLink}>编辑</a> &nbsp;
+        <a href={getLink} target="_blank">调用</a>
       </div>
     );
   };
@@ -87,9 +92,10 @@ export default class Home extends Component {
           <Table.Column title="备注" dataIndex="confComment" cell={this.renderCatrgory} />
           <Table.Column title="创建日期" dataIndex="gmtCreate" cell={this.renderTime}/>
           <Table.Column title="修改日期" dataIndex="gmtModify" cell={this.renderTime}/>
-          <Table.Column title="操作" cell={this.renderOper} width={70}/>
+          <Table.Column title="操作" cell={this.renderOper} width={100}/>
         </Table>
         <Pagination
+          shape="arrow-only"
           pageSize={this.state.pageSize}
           total={this.state.total}
           style={styles.pagination}

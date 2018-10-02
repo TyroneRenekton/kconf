@@ -55,8 +55,9 @@ export default class CreateActivityForm extends Component {
         .then((response) => {
           if (response.data.success) {
             Toast.success("更新配置项成功！");
+            document.location.reload()
           } else {
-            Toast.error("获取数据失败");
+            Toast.error("失败: " + response.data.message);
           }
         });
     });
@@ -77,6 +78,7 @@ export default class CreateActivityForm extends Component {
           comment: ds.confComment,
         },
         placeholder: JSON.parse(ds.confJson),
+        configJson: ds.confJson,
       })
     }
   }
@@ -154,7 +156,7 @@ export default class CreateActivityForm extends Component {
                 </Col>
                 <Col s="18" l="16">
                   <Button type="primary" onClick={this.submit}>
-                    立即创建
+                    提交
                   </Button>
                 </Col>
               </Row>

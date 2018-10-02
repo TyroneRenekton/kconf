@@ -68,7 +68,7 @@ export default class IntroBanner extends Component {
       <div className="intro-banner-wrap" style={style.introBannerWrapStyles}>
         <img
           className="intro-banner-img"
-          src="http://zzkun-tuchuang.oss-cn-hangzhou.aliyuncs.com/18-10-1/25902497.jpg"
+          src="http://zzkun-tuchuang.oss-cn-hangzhou.aliyuncs.com/18-10-2/47691091.jpg"
           style={style.introBannerImgStyles}
           alt=""
         />
@@ -87,8 +87,7 @@ export default class IntroBanner extends Component {
             className="intro-banner-subtitle"
             style={style.introBannerSubtitleStyles}
           >
-            输出支付，账户体系，信用金融，电商，采购，文化公益和大数据等能力和资源，
-            助力社区物业通过提升信息化、智能化水平，改善物业管理水平和服务品质，推动建设便利舒适、安全和谐的智慧社区
+            统一配置中心，专业解放开发生产力，让你的应用配置动态起来！
           </p>
         </div>
       </div>
