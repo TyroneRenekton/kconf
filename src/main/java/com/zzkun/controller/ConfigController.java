@@ -79,51 +79,32 @@ public class ConfigController {
         }
     }
 
-    @RequestMapping(value = "/update")
-    public Object update(String key,
-                         String value,
-                         @RequestParam(required = false) String password) {
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public Object update(@RequestBody Map<String, Object> dataMap) {
         try {
+            String key = MapUtils.getString(dataMap, "key");
+            String value = MapUtils.getString(dataMap, "value");
+            String comment = MapUtils.getString(dataMap, "comment");
+            String password = MapUtils.getString(dataMap, "password");
             if (StringUtils.isBlank(key) || StringUtils.isBlank(value)) {
                 return ResultData.buildErrorResult("key/value为空");
             }
             ConfigDO configDO = configRepo.findConfigDOByConfName(key);
             if (configDO == null) {
-                return ResultData.buildErrorResult("没有找到配置型key = " + key);
+                configDO = new ConfigDO();
+                configDO.setConfName(key);
             }
             if (StringUtils.isNotBlank(configDO.getPassword()) &&
                     !StringUtils.equals(SecureUtil.sha1(password), configDO.getPassword())) {
                 return ResultData.buildErrorResult("密码不正确");
             }
+            configDO.setPassword(SecureUtil.sha1(password));
+            configDO.setConfComment(comment);
             configDO.setConfJson(value);
             configRepo.save(configDO);
             return ResultData.buildSuccessResult();
         } catch (Exception e) {
             log.warn("update error", e);
-            return ResultData.buildErrorResult(e.getMessage());
-        }
-    }
-
-    @RequestMapping(value = "/add")
-    public Object add(String key,
-                      String value,
-                      @RequestParam(required = false) String comment,
-                      @RequestParam(required = false) String password) {
-        try {
-            if (StringUtils.isBlank(key) || StringUtils.isBlank(value)) {
-                return ResultData.buildErrorResult("key/value为空");
-            }
-            ConfigDO configDO = new ConfigDO();
-            configDO.setConfName(key);
-            configDO.setConfJson(value);
-            configDO.setConfComment(StringUtils.trimToNull(comment));
-            if (StringUtils.isNotBlank(password)) {
-                configDO.setPassword(SecureUtil.sha1(password));
-            }
-            configRepo.save(configDO);
-            return ResultData.buildSuccessResult();
-        } catch (Exception e) {
-            log.warn("add error", e);
             return ResultData.buildErrorResult(e.getMessage());
         }
     }

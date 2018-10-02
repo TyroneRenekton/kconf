@@ -3,29 +3,13 @@
 // 变量名 routerConfig 为 iceworks 检测关键字，请不要修改名称
 
 import BasicLayout from './layouts/BasicLayout';
-import ContractCenter from './pages/ContractCenter';
-import MyContract from './pages/MyContract';
-import ContractSearch from './pages/ContractSearch';
 import Welcome from './pages/Welcome';
 import KTable from './pages/KTable';
+import AddConfig from './pages/AddConfig';
 import NotFound from './pages/NotFound';
+import UpdateConfig from './pages/UpdateConfig/UpdateConfig';
 
 const routerConfig = [
-  {
-    path: '/contract/center',
-    layout: BasicLayout,
-    component: ContractCenter,
-  },
-  {
-    path: '/contract/my',
-    layout: BasicLayout,
-    component: MyContract,
-  },
-  {
-    path: '/contract/search',
-    layout: BasicLayout,
-    component: ContractSearch,
-  },
   {
     path: '/',
     layout: BasicLayout,
@@ -35,6 +19,16 @@ const routerConfig = [
     path: '/KTable',
     layout: BasicLayout,
     component: KTable,
+  },
+  {
+    path: '/AddConfig',
+    layout: BasicLayout,
+    component: AddConfig,
+  },
+  {
+    path: '/UpdateConfig/:configId',
+    layout: BasicLayout,
+    component: UpdateConfig,
   },
   {
     path: '*',

@@ -57,8 +57,6 @@ export default class Home extends Component {
   };
 
   renderOper = (a, b, c) => {
-    console.log(a, b, c);
-
     return (
       <div style={styles.oper}>
         <Icon type="edit" size="small" style={styles.editIcon}/>
@@ -84,7 +82,7 @@ export default class Home extends Component {
           className="custom-table"
         >
           <Table.Column title="序列号" dataIndex="id" align="center" width={100}/>
-          <Table.Column title="名称" dataIndex="confName" />
+          <Table.Column title="名称Code" dataIndex="confName" width={160} />
           <Table.Column title="配置概览" dataIndex="confJson" cell={this.renderCatrgory} />
           <Table.Column title="备注" dataIndex="confComment" cell={this.renderCatrgory} />
           <Table.Column title="创建日期" dataIndex="gmtCreate" cell={this.renderTime}/>

@@ -32,22 +32,12 @@ const asideMenuConfig = [
   },
   {
     name: '配置广场',
-    path: '/contract/search',
-    icon: 'cascades',
-  },
-  {
-    name: '合同管理',
-    path: '/contract',
-    icon: 'cascades',
-    children: [
-      { name: '合同中心', path: '/contract/center' },
-      { name: '我的合同', path: '/contract/my' },
-      { name: '合同查询', path: '/contract/search' },
-    ],
-  },
-  {
-    name: 'KTable',
     path: '/KTable',
+    icon: 'cascades',
+  },
+  {
+    name: 'AddConfig',
+    path: '/AddConfig',
     icon: 'home',
   },
 ];
