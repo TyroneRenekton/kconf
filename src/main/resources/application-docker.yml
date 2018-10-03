@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:mysql://kconfdb:3306/kconf?characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC&autoReconnect=true
+    username: root
+    password: 12348765
