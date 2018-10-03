@@ -9,7 +9,7 @@ services:
     volumes:
       - ./db:/docker-entrypoint-initdb.d
 
-  spring-vote-server:
+  spring-kconf-server:
     image: kun368/kconf:master
     restart: always
     ports:
