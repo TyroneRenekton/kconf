@@ -1,6 +1,4 @@
 spring:
-  profiles:
-    active: dev
   datasource:
     url: jdbc:mysql://localhost:3306/kconf?characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC&autoReconnect=true
     username: root
