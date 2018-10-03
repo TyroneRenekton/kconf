@@ -90,15 +90,16 @@ public class ConfigController {
                 return ResultData.buildErrorResult("key/value为空");
             }
             ConfigDO configDO = configRepo.findConfigDOByConfName(key);
-            if (configDO == null) {
+            if (configDO != null) {
+                if (StringUtils.isNotBlank(configDO.getPassword()) &&
+                        !StringUtils.equals(SecureUtil.sha1(password), configDO.getPassword())) {
+                    return ResultData.buildErrorResult("密码不正确");
+                }
+            } else {
                 configDO = new ConfigDO();
                 configDO.setConfName(key);
+                configDO.setPassword(SecureUtil.sha1(password));
             }
-            if (StringUtils.isNotBlank(configDO.getPassword()) &&
-                    !StringUtils.equals(SecureUtil.sha1(password), configDO.getPassword())) {
-                return ResultData.buildErrorResult("密码不正确");
-            }
-            configDO.setPassword(SecureUtil.sha1(password));
             configDO.setConfComment(comment);
             configDO.setConfJson(value);
             configRepo.save(configDO);
